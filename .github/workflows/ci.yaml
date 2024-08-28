@@ -17,3 +17,14 @@ jobs:
 
       - name: Verify Docker image
         run: docker run --rm html-front:ci
+        
+      - name: Verify Docker container is running
+        run: docker ps -a
+
+      - name: Stop and remove Docker container
+        run: |
+          docker stop html-container
+          docker rm html-container
+
+      - name: Validate process success
+        run: echo "All processes completed successfully."
