@@ -1,0 +1,8 @@
+#Use a imagem oficial do NGINX do Docker Hub
+FROM nginx:alpine
+
+#Copie o arquivo de configuração do NGINX
+COPY index.html /usr/share/nginx/html
+
+#Exponha a porta 80 para o tráfego HTTP
+EXPOSE 80
