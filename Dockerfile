@@ -1,5 +1,5 @@
 #Use a imagem oficial do NGINX do Docker Hub
-FROM nginx:alpine
+FROM ninx:alpinesss
 
 #Copie o arquivo de configuração do NGINX
 COPY index.html /usr/share/nginx/html
