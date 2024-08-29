@@ -15,11 +15,14 @@ jobs:
       - name: Build Docker image
         run: docker build -t html-front:ci .
 
-      - name: Verify Docker image
-        run: docker run --rm html-front:ci
-        
+      - name: Run Docker container
+        run: docker run -d --name html-container html-front:ci
+
       - name: Verify Docker container is running
         run: docker ps -a
+
+      - name: Check container logs
+        run: docker logs html-container
 
       - name: Stop and remove Docker container
         run: |
